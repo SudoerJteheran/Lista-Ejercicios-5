@@ -21,7 +21,7 @@ public class Piramide extends FiguraGeometrica{
     }
 
     public void calcularSuperficie(){
-        this.superficie = base*apotema/2+base*base;
+        this.superficie = (base*apotema)/2+Math.pow(base, 2);
     }
 
 }
