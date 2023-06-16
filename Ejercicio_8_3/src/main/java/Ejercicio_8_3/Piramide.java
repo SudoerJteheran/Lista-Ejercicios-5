@@ -7,11 +7,11 @@ public class Piramide extends FiguraGeometrica{
     double apotema;
 
     public Piramide(double altura, double base, double apotema){
-        this.volumen = calcularVolumen();
-        this.superficie = calcularSuperficie();
         this.altura = altura;
         this.base = base;
         this.apotema = apotema;
+        this.volumen = calcularVolumen();
+        this.superficie = calcularSuperficie();
     }
 
     //Metodos para calcular atributos

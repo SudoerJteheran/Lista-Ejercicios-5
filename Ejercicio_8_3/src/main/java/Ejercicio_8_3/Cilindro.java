@@ -6,10 +6,10 @@ public class Cilindro{
     double altura;
 
     public Cilindro(double radio, double altura){
-        this.volumen = calcularVolumen();
-        this.superficie = calcularSuperficie();
         this.radio = radio;
         this.altura = altura;
+        this.volumen = calcularVolumen();
+        this.superficie = calcularSuperficie();
     }
 
     //Metodos para calcular atributos

@@ -6,6 +6,8 @@ public class Esfera{
 
     public Esfera(double radio){
         this.radio = radio;
+        this.volumen = calcularVolumen();
+        this.superficie = calcularSuperficie();
     }
 
     //Metodos para calcular atributos
