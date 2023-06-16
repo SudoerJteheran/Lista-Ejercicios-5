@@ -1,0 +1,155 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package ejercicio_8_2;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+/**
+ * Esta clase denominada VentanaPrincipal define una interfaz gráfica 
+ * que permitirá crear un array de notas. Luego, se puede calcular el 
+ * promedio de notas, la desviación, la nota mayor y la nota menor del 
+ * array.
+ *
+ * @author Jhojan
+ */
+public class VentanaPrincipal extends JFrame implements ActionListener{
+
+    private Container contenedor;
+    private JLabel nota1, nota2, nota3, nota4, nota5, promedio, desviacion, menor, mayor;
+    private JTextField campoNota1, campoNota2, campoNota3, campoNota4, campoNota5;
+    private JButton calcular,limpiar;
+
+    //Constructor
+    public VentanaPrincipal(){
+        inicio();
+        setTitle("Notas");
+        setSize(280, 380);
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+    }
+    
+    /**
+    * Método que crea la ventana con sus diferentes componentes 
+    * gráficos
+    */
+    private void inicio(){
+        contenedor = getContentPane();
+        contenedor.setLayout(null);
+
+        // Establece la etiqueta y el campo de texto de la nota 1
+        nota1 = new JLabel("Nota 1:");
+        nota1.setBounds(20, 20, 135, 23);
+        campoNota1 = new JTextField();
+        campoNota1.setBounds(105, 20, 135, 23);
+
+        // Establece la etiqueta y el campo de texto de la nota 2
+        nota2 = new JLabel("Nota 2:");
+        nota2.setBounds(20, 50, 135, 23);
+        campoNota2 = new JTextField();
+        campoNota2.setBounds(105, 50, 135, 23);
+
+        // Establece la etiqueta y el campo de texto de la nota 3
+        nota3 = new JLabel("Nota 3:");
+        nota3.setBounds(20, 80, 135, 23);
+        campoNota3 = new JTextField();
+        campoNota3.setBounds(105, 80, 135, 23);
+
+        // Establece la etiqueta y el campo de texto de la nota 4
+        nota4 = new JLabel("Nota 4:");
+        nota4.setBounds(20, 110, 135, 23);
+        campoNota4 = new JTextField();
+        campoNota4.setBounds(105, 110, 135, 23);
+
+        // Establece la etiqueta y el campo de texto de la nota 5
+        nota5 = new JLabel("Nota 5:");
+        nota5.setBounds(20, 140, 135, 23);
+        campoNota5 = new JTextField();
+        campoNota5.setBounds(105, 140, 135, 23);
+
+        //Boton Calcular
+        calcular = new JButton("Calcular");
+        calcular.setBounds(20, 170, 100, 23);
+        calcular.addActionListener(this);
+
+        //Boton Limpiar
+        limpiar = new JButton("Limpiar");
+        limpiar.setBounds(140, 170, 80, 23);
+        limpiar.addActionListener(this);
+
+        //Establece la etiqueta del promedio con su valor numerico
+        promedio = new JLabel("Promedio = ");
+        promedio.setBounds(20, 210, 135, 23);
+
+        //Establece la etiqueta de la desviacion con su valor numerico
+        desviacion = new JLabel("Desviacion = ");
+        desviacion.setBounds(20, 240, 200, 23);
+
+        //Establece la etiqueta de la nota mayor con su valor numerico
+        mayor = new JLabel("Nota mayor = ");
+        mayor.setBounds(20, 270, 120, 23);
+
+        //Establece la etiqueta de la nota menor con su valor numerico
+        menor = new JLabel("Nota menor = ");
+        menor.setBounds(20, 300, 120, 23);
+
+        //Agrega los componentes al contenedor
+        contenedor.add(nota1);
+        contenedor.add(campoNota1);
+        contenedor.add(nota2);
+        contenedor.add(campoNota2);
+        contenedor.add(nota3);
+        contenedor.add(campoNota3);
+        contenedor.add(nota4);
+        contenedor.add(campoNota4);
+        contenedor.add(nota5);
+        contenedor.add(campoNota5);
+        contenedor.add(calcular);
+        contenedor.add(limpiar);
+        contenedor.add(promedio);
+        contenedor.add(desviacion);
+        contenedor.add(mayor);
+        contenedor.add(menor);
+
+    }
+
+    /**
+    * Método que gestiona los eventos generados en la ventana principal
+     * @param evento
+    */
+    @Override
+    public void actionPerformed(ActionEvent evento) {
+        if (evento.getSource() == calcular) {
+            Notas notas = new Notas();
+            notas.listaNotas[0] = Double.parseDouble(campoNota1.getText());
+            notas.listaNotas[1] = Double.parseDouble(campoNota2.getText());
+            notas.listaNotas[2] = Double.parseDouble(campoNota3.getText());
+            notas.listaNotas[3] = Double.parseDouble(campoNota4.getText());
+            notas.listaNotas[4] = Double.parseDouble(campoNota5.getText());
+
+            promedio.setText("Promedio = " + String.valueOf(notas.calcularPromedio()));
+            desviacion.setText("Desviacion = " +  String.format("%.2f", notas.calcularDesviacion()));
+            mayor.setText("Nota mayor = " + String.valueOf(notas.calcularMayor()));
+            menor.setText("Nota menor = " + String.valueOf(notas.calcularMenor()));
+
+        } else if (evento.getSource() == limpiar) {
+            campoNota1.setText("");
+            campoNota2.setText("");
+            campoNota3.setText("");
+            campoNota4.setText("");
+            campoNota5.setText("");
+            promedio.setText("Promedio = ");
+            desviacion.setText("Desviacion = ");
+            mayor.setText("Nota mayor = ");
+            menor.setText("Nota menor = ");
+            
+
+        }
+
+    }
+    
+    
+}
