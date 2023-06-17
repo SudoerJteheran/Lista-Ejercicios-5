@@ -72,8 +72,8 @@ public class VentanaPiramide extends JFrame implements ActionListener {
                 double altura = Double.parseDouble(txtAltura.getText());
                 double apotema = Double.parseDouble(txtApotema.getText());
                 Piramide piramide = new Piramide(base, altura, apotema);
-                lblVolumen.setText("Volumen (en cms3): " + String.format("%.2f", piramide.getVolumen()));
-                lblSuperficie.setText("Superficie (en cms2): " + String.format("%.2f", piramide.getSuperficie()));
+                lblVolumen.setText("Volumen (cm^3): " + String.format("%.2f", piramide.getVolumen()));
+                lblSuperficie.setText("Superficie (cm^2): " + String.format("%.2f", piramide.getSuperficie()));
             } catch (Exception e) {
                 error = true;
             }

@@ -54,8 +54,8 @@ public class VentanaEsfera extends JFrame implements ActionListener{
             try {
                 double radio = Double.parseDouble(txtRadio.getText());
                 Esfera esfera = new Esfera(radio);
-                lblVolumen.setText("Volumen (en cms3): " + String.format("%.2f", esfera.getVolumen()));
-                lblSuperficie.setText("Superficie (en cms2): " + String.format("%.2f", esfera.getSuperficie()));
+                lblVolumen.setText("Volumen (cm^3): " + String.format("%.2f", esfera.getVolumen()));
+                lblSuperficie.setText("Superficie (cm^2): " + String.format("%.2f", esfera.getSuperficie()));
             } catch (Exception e) {
                 error = true;;
             } finally {
