@@ -51,18 +51,18 @@ public class VentanaCilindro extends JFrame implements ActionListener{
         txtAltura.setBounds(120, 50, 100, 30); // Ubicación del txtAltura
 
         btnCalcular = new JButton("Calcular"); // Instanciamos el objeto btnCalcular
-        btnCalcular.setBounds(10, 90, 100, 30); // Ubicación del btnCalcular
+        btnCalcular.setBounds(10, 90, 170, 30); // Ubicación del btnCalcular
         /*Agregamos al boton el ActionListener para poder realizar los calculos
         al presionar el botón*/
         btnCalcular.addActionListener(this);
 
         //Establecemos las características del lblVolumen
         lblVolumen = new JLabel("Volumen(cm^3):"); // Instanciamos el objeto lblVolumen
-        lblVolumen.setBounds(10, 130, 100, 30); // Ubicación del lblVolumen
+        lblVolumen.setBounds(10, 90, 100, 30); // Ubicación del lblVolumen
 
         //Establecemos las características del lblSuperficie
         lblSuperficie = new JLabel("Superficie(cm^2):"); // Instanciamos el objeto lblSuperficie
-        lblSuperficie.setBounds(10, 170, 100, 30); // Ubicación del lblSuperficie
+        lblSuperficie.setBounds(10, 130, 100, 30); // Ubicación del lblSuperficie
 
         // Agregamos los componentes al contenedor
         contenedor.add(lblRadio);
