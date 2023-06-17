@@ -1,13 +1,13 @@
 package Ejercicio_8_3;
 
-public class Esfera{
+public class Esfera extends FiguraGeometrica{
     //Atributos propios de la clase
     double radio;
 
     public Esfera(double radio){
         this.radio = radio;
-        this.volumen = calcularVolumen();
-        this.superficie = calcularSuperficie();
+        calcularVolumen();
+        calcularSuperficie();
     }
 
     //Metodos para calcular atributos
