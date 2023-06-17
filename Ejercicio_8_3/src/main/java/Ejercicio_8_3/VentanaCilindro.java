@@ -17,7 +17,7 @@ public class VentanaCilindro extends JFrame implements ActionListener{
     private JButton btnCalcular;
 
     // Constructor de la clase
-    public VentanaCilindro{
+    public VentanaCilindro(){
         // Título de la ventana
         setTitle("Cilindro");
         // Tamaño de la ventana
@@ -28,12 +28,10 @@ public class VentanaCilindro extends JFrame implements ActionListener{
         setLocationRelativeTo(null);
         // Método para inicializar los atributos
         inicializarComponentes();
-        // Método para inicializar los eventos
-        inicializarEventos();
     }
 
     // Método para inicializar los componentes
-    private void inicializarComponentes(){
+    private void inicializarComponentes() {
         contenedor = getContentPane(); // Instanciamos el contenedor
         contenedor.setLayout(null); // No usamos ningún layout, solo asi podremos dar posiciones a los componentes
 
@@ -56,7 +54,6 @@ public class VentanaCilindro extends JFrame implements ActionListener{
 
         btnCalcular = new JButton("Calcular"); // Instanciamos el objeto btnCalcular
         btnCalcular.setBounds(10, 90, 100, 30); // Ubicación del btnCalcular
-
         /*Agregamos al boton el ActionListener para poder realizar los calculos
         al presionar el botón*/
         btnCalcular.addActionListener(this);
@@ -79,27 +76,29 @@ public class VentanaCilindro extends JFrame implements ActionListener{
         contenedor.add(btnCalcular);
         contenedor.add(lblVolumen);
         contenedor.add(lblSuperficie);
+    }
 
-        public void actionPerformed(ActionEvent event){
+        public void actionPerformed(ActionEvent event) {
             boolean error = false; // Variable para verificar si hay error
             double radio = 0;
             double altura = 0;
 
-            try {
-                radio = Double.parseDouble(txtRadio.getText()); // Obtenemos el radio
-                altura = Double.parseDouble(txtAltura.getText()); // Obtenemos la altura
-                Cilindro cilindro = new Cilindro(radio, altura); // Instanciamos el objeto cilindro
+            if (event.getSource() == btnCalcular) {
+                try {
+                    radio = Double.parseDouble(txtRadio.getText()); // Obtenemos el radio
+                    altura = Double.parseDouble(txtAltura.getText()); // Obtenemos la altura
+                    Cilindro cilindro = new Cilindro(radio, altura); // Instanciamos el objeto cilindro
 
-                //Calculamos el volumen y la superficie
-                lblVolumen.setText("Volumen en cm3: " + String.format("%.2f", cilindro.getVolumen())); // Mostramos el volumen
+                    //Calculamos el volumen y la superficie
+                    lblVolumen.setText("Volumen en cm3: " + String.format("%.2f", cilindro.getVolumen()));
+                    lblSuperficie.setText("Superficie en cm2: " + String.format("%.2f", cilindro.getSuperficie()));
+                } catch (Exception e) {
+                    error = true;
+                } finally {
+                    if (error) {
+                        JOptionPane.showMessageDialog(null, "Error, ingrese valores numéricos", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
             }
-        }
-
-
-
     }
-
-
-
-
 }
