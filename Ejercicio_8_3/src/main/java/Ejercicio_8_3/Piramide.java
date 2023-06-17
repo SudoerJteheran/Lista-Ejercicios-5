@@ -15,13 +15,14 @@ public class Piramide extends FiguraGeometrica{
     }
 
     //Metodos para calcular atributos
-    //TODO Revisar las formulas cuidadosamente
     public void calcularVolumen(){
-        this.volumen = (altura*base)/3;
+        this.volumen = (Math.pow(base, 2) * altura) / 3;
     }
 
     public void calcularSuperficie(){
-        this.superficie = (base*apotema)/2+Math.pow(base, 2);
+        double áreaBase = Math.pow(base, 2);
+        double áreaLado = 2 * base * apotema;
+        this.superficie = áreaBase + áreaLado;
     }
 
 }
