@@ -24,19 +24,19 @@ public class VentanaPiramide extends JFrame implements ActionListener {
         contenedor = getContentPane();
         contenedor.setLayout(null);
 
-        lblBase = new JLabel("Base (cms):");
+        lblBase = new JLabel("Base(cms):");
         lblBase.setBounds(10, 10, 100, 30);
 
-        lblAltura = new JLabel("Altura (cms):");
+        lblAltura = new JLabel("Altura(cms):");
         lblAltura.setBounds(10, 50, 100, 30);
 
-        lblApotema = new JLabel("Apotema (cms):");
+        lblApotema = new JLabel("Apotema(cms):");
         lblApotema.setBounds(10, 90, 100, 30);
 
-        lblVolumen = new JLabel("Volumen (en cms3):");
+        lblVolumen = new JLabel("Volumen(cm^3):");
         lblVolumen.setBounds(10, 130, 200, 30);
 
-        lblSuperficie = new JLabel("Superficie (en cms2):");
+        lblSuperficie = new JLabel("Superficie(cm^2):");
         lblSuperficie.setBounds(10, 170, 200, 30);
 
         txtBase = new JTextField();
@@ -78,7 +78,7 @@ public class VentanaPiramide extends JFrame implements ActionListener {
                 error = true;
             }
             if (error) {
-                JOptionPane.showMessageDialog(this, "Error en el ingreso de datos", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Error, ingrese un valor numerico", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
     }

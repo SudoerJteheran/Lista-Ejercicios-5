@@ -36,11 +36,11 @@ public class VentanaCilindro extends JFrame implements ActionListener{
         contenedor.setLayout(null); // No usamos ningún layout, solo asi podremos dar posiciones a los componentes
 
         // Establecemos las características del lblRadio
-        lblRadio = new JLabel("Radio en cms:"); // Instanciamos el objeto lblRadio
+        lblRadio = new JLabel("Radio(cm):"); // Instanciamos el objeto lblRadio
         lblRadio.setBounds(10, 10, 100, 30); // Ubicación del lblRadio
 
         // Establecemos las características del lblAltura
-        lblAltura = new JLabel("Altura en cms:"); // Instanciamos el objeto lblAltura
+        lblAltura = new JLabel("Altura(cm):"); // Instanciamos el objeto lblAltura
         lblAltura.setBounds(10, 50, 100, 30); // Ubicación del lblAltura
 
         // Ahora instanciamos los objetos de tipo JTextField
@@ -57,11 +57,11 @@ public class VentanaCilindro extends JFrame implements ActionListener{
         btnCalcular.addActionListener(this);
 
         //Establecemos las características del lblVolumen
-        lblVolumen = new JLabel("Volumen en cm3:"); // Instanciamos el objeto lblVolumen
+        lblVolumen = new JLabel("Volumen(cm^3):"); // Instanciamos el objeto lblVolumen
         lblVolumen.setBounds(10, 130, 100, 30); // Ubicación del lblVolumen
 
         //Establecemos las características del lblSuperficie
-        lblSuperficie = new JLabel("Superficie en cm2:"); // Instanciamos el objeto lblSuperficie
+        lblSuperficie = new JLabel("Superficie(cm^2):"); // Instanciamos el objeto lblSuperficie
         lblSuperficie.setBounds(10, 170, 100, 30); // Ubicación del lblSuperficie
 
         // Agregamos los componentes al contenedor
@@ -86,8 +86,8 @@ public class VentanaCilindro extends JFrame implements ActionListener{
                     Cilindro cilindro = new Cilindro(radio, altura); // Instanciamos el objeto cilindro
 
                     //Calculamos el volumen y la superficie
-                    lblVolumen.setText("Volumen (cm^3): " + String.format("%.2f", cilindro.getVolumen()));
-                    lblSuperficie.setText("Superficie (cm^2): " + String.format("%.2f", cilindro.getSuperficie()));
+                    lblVolumen.setText("Volumen(cm^3): " + String.format("%.2f", cilindro.getVolumen()));
+                    lblSuperficie.setText("Superficie(cm^2): " + String.format("%.2f", cilindro.getSuperficie()));
                 } catch (Exception e) {
                     error = true;
                 } finally {
