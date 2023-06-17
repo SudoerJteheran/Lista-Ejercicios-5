@@ -1,6 +1,6 @@
 package Ejercicio_8_3;
 
-public class Cilindro{
+public class Cilindro extends FiguraGeometrica{
     //Atributos propios de la clase
     double radio;
     double altura;
@@ -8,8 +8,8 @@ public class Cilindro{
     public Cilindro(double radio, double altura){
         this.radio = radio;
         this.altura = altura;
-        this.volumen = calcularVolumen();
-        this.superficie = calcularSuperficie();
+        calcularVolumen();
+        calcularSuperficie();
     }
 
     //Metodos para calcular atributos
