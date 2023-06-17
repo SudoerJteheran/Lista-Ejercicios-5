@@ -36,11 +36,11 @@ public class VentanaCilindro extends JFrame implements ActionListener{
         contenedor.setLayout(null); // No usamos ningún layout, solo asi podremos dar posiciones a los componentes
 
         // Establecemos las características del lblRadio
-        lblRadio = new JLabel("Radio(cm):"); // Instanciamos el objeto lblRadio
+        lblRadio = new JLabel("Radio(cms):"); // Instanciamos el objeto lblRadio
         lblRadio.setBounds(10, 10, 100, 30); // Ubicación del lblRadio
 
         // Establecemos las características del lblAltura
-        lblAltura = new JLabel("Altura(cm):"); // Instanciamos el objeto lblAltura
+        lblAltura = new JLabel("Altura(cms):"); // Instanciamos el objeto lblAltura
         lblAltura.setBounds(10, 50, 100, 30); // Ubicación del lblAltura
 
         // Ahora instanciamos los objetos de tipo JTextField
