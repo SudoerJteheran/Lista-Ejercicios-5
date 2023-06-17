@@ -65,7 +65,4 @@ public class VentanaEsfera extends JFrame implements ActionListener{
             }
         }
     }
-
-
-
 }
